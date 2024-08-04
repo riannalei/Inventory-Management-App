@@ -51,16 +51,23 @@ export default function Home() {
 
   // Function to add an item to the inventory
   const addItem = async (item) => {
-    const docRef = doc(collection(firestore, 'inventory'), item);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      const { quantity } = docSnap.data();
-      await setDoc(docRef, { quantity: quantity + 1 });
-    } else {
-      await setDoc(docRef, { quantity: 1 });
+    try {
+        const docRef = doc(collection(firestore, 'inventory'), item);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+            const { quantity } = docSnap.data();
+            console.log(`Updating quantity for ${item}: ${quantity}`);
+            await setDoc(docRef, { quantity: quantity + 1 }, { merge: true });
+        } else {
+            console.log(`Adding new item: ${item}`);
+            await setDoc(docRef, { name: item, quantity: 1 });
+        }
+        await updateInventory();
+    } catch (error) {
+        console.error("Error updating inventory:", error);
     }
-    await updateInventory();
-  };
+};
+
 
   // Function to remove an item from the inventory
   const removeItem = async (item) => {
