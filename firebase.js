@@ -4,14 +4,15 @@ import { getFirestore } from 'firebase/firestore';
 
 // Replace with your Firebase configuration
 const firebaseConfig = {
-  apiKey: 'YOUR_API_KEY',
-  authDomain: 'YOUR_PROJECT_ID.firebaseapp.com',
-  projectId: 'YOUR_PROJECT_ID',
-  storageBucket: 'YOUR_PROJECT_ID.appspot.com',
-  messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-  appId: 'YOUR_APP_ID',
-};
-
+    apiKey: "AIzaSyD8EBvAKEtOo0CqWpcq1FPFFYHmji33v58",
+    authDomain: "inventory-management-app-4ad3d.firebaseapp.com",
+    projectId: "inventory-management-app-4ad3d",
+    storageBucket: "inventory-management-app-4ad3d.appspot.com",
+    messagingSenderId: "988871786343",
+    appId: "1:988871786343:web:78644fdd25b96798c179c2",
+    measurementId: "G-95Z74FY83E"
+  };
+  
 const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app);
 
