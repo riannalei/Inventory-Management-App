@@ -38,10 +38,10 @@ This Inventory Management App is a React application designed to help users mana
     ```bash
     npm start
 
-##Usage
+## Usage
 Once the application is running, you can add items to your inventory by entering the item name and clicking the "Add New Item" button. To search for items, simply type the item name in the search bar. You can remove items by clicking the "Remove" button next to each item.
 
-##Deployment
+## Deployment
 This application is set up for easy deployment to Vercel, which handles both frontend and serverless backend deployments:
 
 **Deploy on Vercel:**
